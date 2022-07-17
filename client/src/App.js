@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
-import RoomList from './Components/RoomList';
 // import TypeMessage from './Components/TypeMessage';
 import Chat from './Components/Chat';
+// import CreateRoom from './Components/CreateRoom';
+import io from "socket.io-client";
+
+const socket = io.connect("http://localhost:3001");
 
 const App = () => {
   const [showChat, setShowChat] = useState(false);
@@ -14,7 +17,7 @@ const App = () => {
 
     const joinRoom = () => {
         if (username !== "" && room !== ""){
-
+            socket.emit("join_room", room);
         }
         setShowChat(true);
     }
@@ -23,9 +26,9 @@ const App = () => {
   
   return (
     <div className="App">
-      <h1>REAL TIME CHAT</h1>
+      <h1 className='header'><u>REAL TIME CHAT</u></h1>
           <div className="roomList">
-            <RoomList />
+            {/* <CreateRoom /> */}
             { !showChat ? (
                   <div className="joinChatContainer">
                           <h1>Join A Room!</h1>
@@ -35,7 +38,7 @@ const App = () => {
                           <button onClick={joinRoom}>Join Room</button>
                   </div>
             ) : (
-                  <Chat roomName={roomName}/>
+                  <Chat socket={socket} roomName={roomName} username={username} room={room} />
             )}
           </div>
     </div>
