@@ -1,36 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300&display=swap');
 .App {
   width: 100vw;
   height: 100vh;
   background: #fff;
   color: #212121;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Poppins', sans-serif;
   display: grid;
   place-items: center;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 
 body {
   margin: 0%;
   padding: 0%;
+  box-sizing: border-box;
 }
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 
 .joinChatContainer {
   display: flex;
   flex-direction: column;
   text-align: center;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  background-color: white;
+  /* margin: 50px; */
+  padding: 100px;
+  border-radius: 20px;
 }
 
 .joinChatContainer h3 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .joinChatContainer input {
   width: 210px;
   height: 40px;
   margin: 7px;
-  border: 2px solid #43a047;
+  border: 2px solid linear-gradient(to top, #5ee7df 0%, #b490ca 100%);;
   border-radius: 5px;
   padding: 5px;
   font-size: 16px;
@@ -44,18 +56,20 @@ body {
   border-radius: 5px;
   padding: 5px;
   font-size: 16px;
-  background: #43a047;
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
   color: #fff;
   cursor: pointer;
 }
 
-.joinChatContainer button:hover {
-  background: #2e7d32;
-}
+/* .joinChatContainer button:hover {
+  background: darkcyan;
+} */
 
 .chat-window {
-  width: 300px;
-  height: 420px;
+  width: 60vw;
+  height: 500px;
+  border-radius: 30px;
+  background: #263238;
 }
 
 .chat-window p {
@@ -68,21 +82,24 @@ body {
   background: #263238;
   position: relative;
   cursor: pointer;
+  box-shadow: #212121;
+  color: white;
 }
 
 .chat-window .chat-header p {
   display: block;
   padding: 0 1em 0 2em;
-  color: #fff;
+  color: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);;
   font-weight: 700;
   line-height: 45px;
+  text-align: center;
 }
 
 .chat-window .chat-body {
-  height: calc(450px - (45px + 70px));
-  border: 1px solid #263238;
-  background: #fff;
-
+  height: calc(600px - (45px + 70px));
+  border: 1px solid darkgreen;
+  background: white;
+  border-radius: 5px;
   position: relative;
 }
 
@@ -91,6 +108,7 @@ body {
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
+  /* border-radius: 5px; */
 }
 
 .chat-window .chat-body .message-container::-webkit-scrollbar {
@@ -99,8 +117,9 @@ body {
 
 .chat-window .chat-body .message {
   height: auto;
-  padding: 10px;
+  padding: 15px;
   display: flex;
+  border-radius: 5px;
 }
 
 .chat-window .chat-body .message .message-content {
@@ -108,9 +127,9 @@ body {
   height: auto;
   min-height: 40px;
   max-width: 120px;
-  background-color: #43a047;
-  border-radius: 5px;
-  color: white;
+  background-color: #fff;;
+  border-radius: 10px;
+  color: Black;
   display: flex;
   align-items: center;
   margin-right: 5px;
@@ -127,6 +146,9 @@ body {
 
 #you .message-content {
   justify-content: flex-start;
+  background-color: cornflowerblue;
+  border-radius: 10px;
+  padding-left: 10px;
 }
 
 #you .message-meta {
@@ -141,6 +163,8 @@ body {
 #other .message-content {
   justify-content: flex-end;
   background-color: cornflowerblue;
+  border-radius: 10px;
+  padding-right: 5px;
 }
 
 #other .message-meta {
@@ -163,6 +187,7 @@ body {
   border: 1px solid #263238;
   border-top: none;
   display: flex;
+  border-radius: 5px;
 }
 
 .chat-window .chat-footer input {
@@ -182,18 +207,48 @@ body {
   display: grid;
   place-items: center;
   cursor: pointer;
-  flex: 15%;
+  flex: 10%;
   height: 100%;
-  background: transparent;
+  /* background: white; */
   outline: none;
   font-size: 25px;
-  color: lightgray;
 }
 
 .chat-window .chat-footer button:hover {
-  color: #43a047;
+  color: #2131c6;
 }
 
 .hide {
   opacity: 0 !important;
+}
+
+.add-room {
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  left: 10%;
+  top: 30%;
+  padding: 30px;
+}
+
+.add-room input{
+  padding: 10px;
+}
+
+.add-room button {
+  padding: 10px;
+}
+
+.room-btn {
+  display: flex;
+  flex-direction: column;
+  /* border: none; */
+}
+
+.header {
+  position: absolute;
+  top: 30px;
+  align-items: center;
+  font-size: 3rem;
+  font-family: 'Lato', sans-serif;
 }

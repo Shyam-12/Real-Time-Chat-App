@@ -1,14 +1,18 @@
 import React from "react";
-import CreateRoom from './CreateRoom';
-const RoomList = () => {
-    return (
+import '../App.css';
+import CreateRoom from "./CreateRoom";
+
+const RoomList = ({createroom}) => {
+    console.log(createroom);
+  return (
         <div>
-            <h2>Your Rooms: </h2>
-            <p>#Development</p>
-            <p>#Blockchain</p>
-            <CreateRoom />
+            <button className="room-btn">Development</button>
+            <button className="room-btn">BlockChain</button>
+            <button>{createroom.map((room)=> (
+                    <CreateRoom />
+            ))}</button>
         </div>
-    );
+  );
 }
 
 export default RoomList;
